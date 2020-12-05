@@ -37,7 +37,7 @@ print_field(solution)
 # | 6 2 3 | 5 7 1 | 9 4 8 |
 # -------------------------
 ```
-The input can be a numpy array, check `solution`'s docstring for details.
+The input can be a numpy array, check `solve`'s docstring for details.
  
 There is also a handy shortcut for solving and printing the solutions: 
 ```python
