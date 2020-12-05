@@ -1,1 +1,1 @@
-from .solver import solve, print_solutions
+from .solver import solve, print_solutions, print_field

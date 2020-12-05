@@ -115,7 +115,7 @@ def parse_text(text: str, cell_shape):
     for i, value in enumerate(values):
         if value != '?':
             value = int(value)
-            assert 0 < value <= cell_size
+            assert 0 < value <= cell_size, value
 
             i, j = np.unravel_index(i, field.shape[:2])
             value -= 1
@@ -149,7 +149,7 @@ def parse_array(array: np.ndarray, cell_shape):
     return field, initial, cell_shape
 
 
-def print_field(field, cell_shape):
+def print_field(field: np.ndarray, cell_shape: Tuple[int, int] = None):
     cell_shape, cell_size = get_cell_shape(len(field), cell_shape)
     h, w = cell_shape
     number_width = int(np.log10(cell_size - 1)) + 1
@@ -176,6 +176,4 @@ def print_solutions(text: str, cell_shape: Tuple[int, int] = None, max_solutions
 
     for solution in solutions:
         print_field(solution, cell_shape)
-        # for row in solution:
-        #     print(*row)
         print()
